@@ -31,7 +31,7 @@ const fetchCountriesData = async () => {
             region: country.region,
             subregion: country.subregion ?? 'N/A',
             currencies: country.currencies
-                ? Object.values(country.currencies).map(c => c.name).join(', ')
+                ? Object.keys(country.currencies)[0]
                 : 'N/A',
             capital: country.capital ? country.capital[0] : 'N/A',
             population: country.population.toLocaleString(),
@@ -50,7 +50,7 @@ onMounted(() => {
 </script>
 
 <template>
-    <div class="w-full flex flex-col bg-gray-50">
+    <div class="w-full flex flex-col bg-gray-50 pb-[50px]">
       
         <!-- Header -->
         <div class="pt-[60px] pb-[50px]">

@@ -25,7 +25,7 @@ const updateUser = () => {
 </script>
 <template>
     <div class="flex-grow flex items-center justify-center bg-gray-50 w-full">
-        <div class="w-full max-w-xl bg-white shadow-xl rounded-lg p-8 mb-[100px]">
+        <div class="w-full max-w-xl lg:bg-white lg:shadow-xl rounded-lg p-8 mb-[100px]">
             <!-- Header -->
             <h1 class="text-3xl font-semibold leading-tight text-gray-900 mb-6 text-center">
                 Edit Profile
