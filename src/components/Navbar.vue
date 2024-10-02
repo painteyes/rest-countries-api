@@ -17,9 +17,9 @@ const isMenuOpen = ref(false);
     <nav class="bg-indigo-400 shadow-md">
         <div class="max-w-screen-xl h-full flex items-center justify-between mx-auto p-4">
             <!-- Logo -->
-            <a href="/" class="flex items-center">
+            <router-link to="/" class="flex items-center">
                 <span class="text-2xl font-extrabold text-white">REST Countries API</span>
-            </a>
+            </router-link>
             <!-- Burger Menu Icon -->
             <button
                 @click="isMenuOpen = !isMenuOpen"
@@ -44,8 +44,8 @@ const isMenuOpen = ref(false);
             </button>
             <!-- Desktop Menu -->
             <div v-if="state.authenticated" class="hidden md:flex md:space-x-6 items-center">
-                <a href="/" class="text-white hover:underline">Home</a>
-                <a href="/user/edit" class="text-white hover:underline">Profile</a>
+                <router-link to="/" class="text-white hover:underline">Home</router-link>
+                <router-link to="/user/edit" class="text-white hover:underline">Profile</router-link>
                 <button
                     @click="handleLogout"
                     class="bg-sky-400 hover:bg-sky-400 text-white font-semibold py-2 px-4 rounded-lg"
@@ -56,8 +56,8 @@ const isMenuOpen = ref(false);
         </div>
         <!-- Mobile Menu -->
         <div v-if="isMenuOpen && state.authenticated" class="md:hidden bg-indigo-500 p-2">
-            <a href="/" class="block text-lg text-white font-semibold py-2 px-4 hover:bg-indigo-500">Home</a>
-            <a href="/user/edit" class="block text-white text-lg font-semibold py-2 px-4 hover:bg-indigo-500">Profile</a>
+            <router-link to="/" class="block text-lg text-white font-semibold py-2 px-4 hover:bg-indigo-500">Home</router-link>
+            <router-link to="/user/edit" class="block text-white text-lg font-semibold py-2 px-4 hover:bg-indigo-500">Profile</router-link>
             <button
                 @click="handleLogout"
                 class=" text-left bg-sky-400 hover:bg-sky-500 text-white font-semibold py-2 px-4 m-4 rounded-lg"

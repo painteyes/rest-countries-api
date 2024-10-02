@@ -112,9 +112,9 @@ const register = async () => {
             <div class="ml-3 text-sm">
                 <label for="terms" class="font-light text-gray-500">
                     I accept the
-                    <a class="font-medium text-blue-600 hover:underline" href="#">
+                    <router-link class="font-medium text-blue-600 hover:underline" to="#">
                         Terms and Conditions
-                    </a>
+                    </router-link>
                 </label>
             </div>
         </div>
@@ -130,7 +130,7 @@ const register = async () => {
         <!-- Login Message -->
         <p class="text-sm font-light text-gray-500 mt-6">
             Already have an account?
-            <a href="#" class="font-medium text-blue-600 hover:underline">Login here</a>
+            <router-link to="#" class="font-medium text-blue-600 hover:underline">Login here</router-link>
         </p>
     </form>
 </template>
