@@ -12,7 +12,7 @@ export const mockFetch = (url, options) => {
             },
             '/api/logout': {
                 method: 'POST',
-                response: { ok: true }, // Simulate a logout response
+                response: {}, 
             },
             '/api/register': {
                 method: 'POST',

@@ -56,8 +56,8 @@ const isMenuOpen = ref(false);
         </div>
         <!-- Mobile Menu -->
         <div v-if="isMenuOpen && state.authenticated" class="md:hidden bg-indigo-500 p-2">
-            <router-link to="/" class="block text-lg text-white font-semibold py-2 px-4 hover:bg-indigo-500">Home</router-link>
-            <router-link to="/user/edit" class="block text-white text-lg font-semibold py-2 px-4 hover:bg-indigo-500">Profile</router-link>
+            <router-link to="/" @click="isMenuOpen = false" class="block text-lg text-white font-semibold py-2 px-4 hover:bg-indigo-500">Home</router-link>
+            <router-link to="/user/edit" @click="isMenuOpen = false" class="block text-white text-lg font-semibold py-2 px-4 hover:bg-indigo-500">Profile</router-link>
             <button
                 @click="handleLogout"
                 class=" text-left bg-sky-400 hover:bg-sky-500 text-white font-semibold py-2 px-4 m-4 rounded-lg"
