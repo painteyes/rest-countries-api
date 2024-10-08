@@ -62,7 +62,7 @@ onMounted(() => {
         <!-- Toggle Switch -->
         <div class="flex justify-center items-center pb-[30px]">
             <div class="flex items-center">
-                <!-- Testo del toggle (Table) -->
+                <!-- Toggle text (Table) -->
                 <span class="mr-4 text-lg text-gray-800 font-medium">Table</span>
                 
                 <!-- Toggle -->
@@ -82,7 +82,7 @@ onMounted(() => {
                     ></span>
                 </label>
                 
-                <!-- Testo del toggle (Chart) -->
+                <!-- Toggle text (Chart) -->
                 <span class="ml-4 text-lg text-gray-800 font-medium">Chart</span>
             </div>
         </div>

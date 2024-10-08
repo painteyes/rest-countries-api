@@ -1,27 +1,27 @@
 import { reactive } from 'vue';
 import { getUserFromStorage, saveUserToStorage, removeUserFromStorage } from '../utility/storage';
 
-// Reactive state shared across the application
+// Global reactive state
 export const state = reactive({
     user: null,
-    authenticated: false, 
+    authenticated: false,
 });
 
-// Set user data and persist it in localStorage
+// Set user and authentication state
 export function setUser(user) {
     state.user = user;
-    state.authenticated = true; 
-    saveUserToStorage(user);
+    state.authenticated = true;
+    saveUserToStorage(user); // Persist in localStorage
 }
 
-// Clear user data and remove it from localStorage
+// Clear user and authentication state
 export function clearUser() {
     state.user = null;
-    state.authenticated = false; 
-    removeUserFromStorage();
+    state.authenticated = false;
+    removeUserFromStorage(); // Remove from localStorage
 }
 
-// Initialize user state from localStorage
+// Initialize user state from localStorage 
 export function initializeUser() {
     const user = getUserFromStorage();
     if (user) {

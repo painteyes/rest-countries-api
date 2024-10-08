@@ -2,27 +2,20 @@
 import { reactive } from 'vue';
 import { useRouter } from 'vue-router'; 
 import { state, setUser } from '../store/store.js';
-
-const user = reactive({ ...state.user });
+import { navigateBackOrHome } from '../router/navigation.js';
 
 const router = useRouter(); 
 
-const updateUser = () => {
-    setUser(user); 
-    
-    // Get the URL of the previous page
-    const referrer = document.referrer;
+// Create a reactive copy of the user state
+const user = reactive({ ...state.user });
 
-    // Check if the referrer is a page from our site
-    if (referrer && referrer.includes(window.location.origin)) {
-        // If it comes from our site, go back
-        router.go(-1);
-    } else {
-        // Otherwise, redirect to a default page 
-        router.push('/'); 
-    }
+// Function to update user data 
+const updateUser = () => {
+    setUser(user); // Update the user state
+    navigateBackOrHome(router); // Navigate back or to homepage
 };
 </script>
+
 <template>
     <div class="flex-grow flex items-center justify-center bg-gray-50 w-full">
         <div class="w-full max-w-xl lg:bg-white lg:shadow-xl rounded-lg p-8 mb-[100px]">
