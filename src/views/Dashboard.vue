@@ -6,8 +6,10 @@ import CountryTable from '../components/CountryTable.vue';
 import CountriesByRegionChart from '../components/CountriesByRegionChart.vue';
   
 // Get the user's name from the store
-const name = computed(() => state.user.name);
-  
+const name = computed(() => {
+    return state.user ? state.user.name : 'Guest';
+});
+
 // State to hold countries data
 const countries = ref([]);
   
